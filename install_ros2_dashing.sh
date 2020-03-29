@@ -1,4 +1,5 @@
-##install_ros2_dashing_OneLine_GUI_Desktop
+#install_ros2_dashing_OneLine_GUI_Desktop
+#!/bin/bash
 
 echo ""
 echo "[Note] Target OS version  >>> Ubuntu 18.04.x (Bionic Beaver)"
