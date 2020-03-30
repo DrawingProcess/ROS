@@ -1,4 +1,4 @@
-#install_ros2_dashing_OneLine_GUI_Desktop
+#OneLineInstall_ros2_dashing_Develop
 #!/bin/bash # a declaration designating the shell to run the script as a bash
 
 echo ""
@@ -58,12 +58,61 @@ sudo apt -y install ros-dashing-ros2bag ros-dashing-rosbag2-transport
 # ROS2 has a different way of storing data from ROS1 and requires plug-ins to be installed.
 sudo apt install ros-dashing-rosbag2-storage-default-plugins
 
-echo "[#Install colcon]"
-sudo apt -y install python3-colcon-common-extensions -y
-
 echo "[#Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
+
+echo "[#Install Colcon]"
+sudo apt install python3-colcon-common-extensions -y
+echo "[#ros2_example_ws git clone / build / install]"
+echo "[#Create a workspace]"
+mkdir -p ~/ros2_example_ws/src
+cd ~/ros2_example_ws
+echo "[#Add some sources]"
+git clone https://github.com/ros2/examples src/examples
+cd ~/ros2_example_ws/src/examples/
+git checkout dashing
+cd ~/ros2_example_ws
+echo "[#Build the workspace]"
+colcon build --symlink-install
+echo "[#Source the environment]"
+. install/setup.bash
+
+echo "[#Install development tools and ROS tools]"
+sudo apt update && sudo apt install -y \
+  build-essential \
+  cmake \
+  git \
+  python3-colcon-common-extensions \
+  python3-pip \
+  python-rosdep \
+  python3-vcstool \
+  wget
+echo "[# install some pip packages needed for testing]"
+python3 -m pip install -U \
+  argcomplete \
+  flake8 \
+  flake8-blind-except \
+  flake8-builtins \
+  flake8-class-newline \
+  flake8-comprehensions \
+  flake8-deprecated \
+  flake8-docstrings \
+  flake8-import-order \
+  flake8-quotes \
+  pytest-repeat \
+  pytest-rerunfailures \
+  pytest \
+  pytest-cov \
+  pytest-runner \
+  setuptools
+echo "[# install Fast-RTPS dependencies]"
+sudo apt install --no-install-recommends -y \
+  libasio-dev \
+  libtinyxml2-dev
+echo "[# install CycloneDDS dependencies]"
+sudo apt install --no-install-recommends -y \
+  libcunit1-dev
 
 echo "[Complete!!!!!]"
 exit 0
