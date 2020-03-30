@@ -1,5 +1,5 @@
 #install_ros2_dashing_OneLine_GUI_Desktop
-#!/bin/bash
+#!/bin/bash # a declaration designating the shell to run the script as a bash
 
 echo ""
 echo "[Note] Target OS version  >>> Ubuntu 18.04.x (Bionic Beaver)"
@@ -67,3 +67,5 @@ sudo apt-get upgrade -y
 
 echo "[Complete!!!!!]"
 exit 0
+
+# sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_dashing.sh && chmod 755 ./install_ros2_dashing.sh && bash ./install_ros2_dashing.sh
