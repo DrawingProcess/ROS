@@ -1,4 +1,5 @@
 #install_ros2_foxy_OneLine_GUI_Desktop
+#!/bin/bash  # a declaration designating the shell to run the script as a bash
 
 echo ""
 echo "[Note] Target OS version  >>> Ubuntu 18.04.x (Bionic Beaver)"
@@ -66,3 +67,5 @@ sudo apt-get upgrade -y
 
 echo "[Complete!!!!!]"
 exit 0
+
+# sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_foxy.sh && chmod 755 ./install_ros2_foxy.sh && bash ./install_ros2_foxy.sh
