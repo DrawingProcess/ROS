@@ -42,8 +42,8 @@ sudo apt install python3-argcomplete -y
 
 echo "[#Install additional RMW implementations]"
 sudo apt update -y
-sudo apt install ros-dashing-rmw-opensplice-cpp # for OpenSplice
-#sudo apt install ros-dashing-rmw-connext-cpp # for RTI Connext (requires license agreement)
+sudo apt install ros-dashing-rmw-opensplice-cpp -y # for OpenSplice
+#sudo apt install ros-dashing-rmw-connext-cpp -y # for RTI Connext (requires license agreement)
 
 #echo "[#Install bridge using ROS 1 packages]"
 #sudo apt update -y
@@ -56,7 +56,7 @@ sudo apt install ros-dashing-turtlesim -y
 echo "[#Install ros2bag]"
 sudo apt -y install ros-dashing-ros2bag ros-dashing-rosbag2-transport
 # ROS2 has a different way of storing data from ROS1 and requires plug-ins to be installed.
-sudo apt install ros-dashing-rosbag2-storage-default-plugins
+sudo apt install ros-dashing-rosbag2-storage-default-plugins -y
 
 echo "[#Update the package lists and upgrade them]"
 sudo apt-get update -y
@@ -114,7 +114,7 @@ echo "[# install CycloneDDS dependencies]"
 sudo apt install --no-install-recommends -y \
   libcunit1-dev
 
-echo "[#Install Cartographer dependencies]"
+echo "[#Install Dependencies Packages]"
 sudo apt install -y \
  google-mock \
  libceres-dev \
@@ -125,13 +125,14 @@ sudo apt install -y \
  protobuf-compiler \
  libcairo2-dev \
  libpcl-dev \
- python3-sphinx
+ python3-sphinx -y
 echo "[# Install Gazebo9]"
-curl -sSL http://get.gazebosim.org | sh
+curl -s SL http://get.gazebosim.org | sh  
+#original : -sSL(ROBOTIS) -> merge : -s SL
 sudo apt install ros-dashing-gazebo-*
 echo "[# Install Cartographer]"
-sudo apt install ros-dashing-cartographer
-sudo apt install ros-dashing-cartographer-ros
+sudo apt install ros-dashing-cartographer -y
+sudo apt install ros-dashing-cartographer-ros -y
 echo "[# Install Navigation2]"
 sudo apt install ros-dashing-navigation2 -y
 sudo apt install ros-dashing-nav2-bringup
@@ -145,7 +146,7 @@ wget https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3/ros2/turtlebot3.re
 vcs import src < turtlebot3.repos
 colcon build --symlink-install
 
-echo "[#Save Turtlebot Bash Command for Setup]"
+echo "[Save Turtlebot Bash Command for Setup]"
 sudo sh -c "echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc"
 sudo sh -c "echo 'export ROS_DOMAIN_ID=30 #TURTLEBOT3' >> ~/.bashrc"
 source ~/.bashrc
@@ -153,4 +154,4 @@ source ~/.bashrc
 echo "[Complete!!!!!]"
 exit 0
 
-# sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_dashing_useTurtlebot.sh && chmod 755 ./install_ros2_dashing_useTurtlebot.sh && bash ./install_ros2_dashing_useTurtlebot.sh
+#OneLineCode : sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_dashing_useTurtlebot.sh && chmod 755 ./install_ros2_dashing_useTurtlebot.sh && bash ./install_ros2_dashing_useTurtlebot.sh
