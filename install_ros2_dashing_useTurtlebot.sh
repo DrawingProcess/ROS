@@ -1,5 +1,5 @@
 #OneLineInstall_ros2_dashing_RemotePC_Turtlebot
-#!/bin/sh # a declaration designating the shell to run the script as a dash
+#!/bin/bash # a declaration designating the shell to run the script as a bash
 
 echo ""
 echo "[Note] Target OS version  >>> Ubuntu 18.04.x (Bionic Beaver)"
@@ -88,24 +88,24 @@ sudo apt update && sudo apt install -y \
   python-rosdep \
   python3-vcstool \
   wget
-echo "[# install some pip packages needed for testing]"
-python3 -m pip install -U \
-  argcomplete \
-  flake8 \
-  flake8-blind-except \
-  flake8-builtins \
-  flake8-class-newline \
-  flake8-comprehensions \
-  flake8-deprecated \
-  flake8-docstrings \
-  flake8-import-order \
-  flake8-quotes \
-  pytest-repeat \
-  pytest-rerunfailures \
-  pytest \
-  pytest-cov \
-  pytest-runner \
-  setuptools
+#echo "[# install some pip packages needed for testing]"
+#python3 -m pip install -U \
+#  argcomplete \
+#  flake8 \
+#  flake8-blind-except \
+#  flake8-builtins \
+#  flake8-class-newline \
+#  flake8-comprehensions \
+#  flake8-deprecated \
+#  flake8-docstrings \
+#  flake8-import-order \
+#  flake8-quotes \
+#  pytest-repeat \
+#  pytest-rerunfailures \
+#  pytest \
+#  pytest-cov \
+#  pytest-runner \
+#  setuptools
 echo "[# install Fast-RTPS dependencies]"
 sudo apt install --no-install-recommends -y \
   libasio-dev \
@@ -154,4 +154,4 @@ source ~/.bashrc
 echo "[Complete!!!!!]"
 exit 0
 
-#OneLineCode : sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_dashing_useTurtlebot.sh && chmod 755 ./install_ros2_dashing_useTurtlebot.sh && ./install_ros2_dashing_useTurtlebot.sh
+#OneLineCode : sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_dashing_useTurtlebot.sh && chmod 755 ./install_ros2_dashing_useTurtlebot.sh && bash ./install_ros2_dashing_useTurtlebot.sh
