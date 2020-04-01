@@ -1,5 +1,5 @@
-#OneLineInstall_ros2_dashing_Develop_useTurtlebot
-#!/bin/bash # a declaration designating the shell to run the script as a bash
+#OneLineInstall_ros2_dashing_RemotePC_Turtlebot
+#!/bin/sh # a declaration designating the shell to run the script as a dash
 
 echo ""
 echo "[Note] Target OS version  >>> Ubuntu 18.04.x (Bionic Beaver)"
@@ -154,4 +154,4 @@ source ~/.bashrc
 echo "[Complete!!!!!]"
 exit 0
 
-#OneLineCode : sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_dashing_useTurtlebot.sh && chmod 755 ./install_ros2_dashing_useTurtlebot.sh && bash ./install_ros2_dashing_useTurtlebot.sh
+#OneLineCode : sudo wget https://raw.githubusercontent.com/seongjunChoi0714/ROS/master/install_ros2_dashing_useTurtlebot.sh && chmod 755 ./install_ros2_dashing_useTurtlebot.sh && ./install_ros2_dashing_useTurtlebot.sh
