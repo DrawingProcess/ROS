@@ -72,6 +72,12 @@ echo "[#Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
+echo "alias noetic=\"source /opt/ros/noetic/setup.bash; source ~/catkin_ws/devel/setup.bash;  echo \"Noetic is Activated\"\"" >> ~/.bashrc
+echo "alias foxy=\"source /opt/ros/foxy/setup.bash; source ~/colcon_ws/install/setup.bash;  echo \"Foxy is Activated\"\"" >> ~/.bashrc
+echo "alias map=\"cd ~/colcon_ws/src/mapviz/mapviz/launch; ros2 launch mapviz.launch.py\"" >> ~/.bashrc
+echo "alias cm=\"noetic; cd ~/catkin_ws; catkin_make\"" >> ~/.bashrc
+echo "alias cb=\"foxy; cd ~/colcon_ws; colcon build\"" >> ~/.bashrc
+
 echo "[Complete!!!!!]"
 exit 0
 
